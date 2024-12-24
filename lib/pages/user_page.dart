@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:register_id/pages/register_page.dart';
 import 'package:register_id/widgets/user_card.dart';
 
 class UserPage extends StatefulWidget {
@@ -51,7 +52,21 @@ class _UserPageState extends State<UserPage> {
                     ),
                     IconButton(
                       icon: const Icon(Icons.info_outline, color: Colors.black),
-                      onPressed: () {},
+                      onPressed: () {
+                        showDialog(
+                          context: context, 
+                          builder: (context) => AlertDialog(
+                            title: const Text('Bluetooth Info'),
+                            content: const Text('Give Permission to this Aplication on setting!'),
+                            actions: [
+                              TextButton(
+                                onPressed: () => Navigator.pop (context), 
+                                child: const Text('OK'),
+                              ),
+                            ],
+                          ),
+                        );
+                      },
                     ),
                   ],
                 ),
@@ -125,16 +140,18 @@ class _UserPageState extends State<UserPage> {
 
           // Add New User Button
           Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.symmetric(vertical: 28.0),
             child: ElevatedButton.icon(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
-                padding: const EdgeInsets.symmetric(vertical: 12.0),
+                padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 20.0),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10.0),
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                 Navigator.push(context, MaterialPageRoute(builder: (context) => const RegisterPage()));
+              },
               icon: const Icon(Icons.person_add, color: Colors.white),
               label: const Text(
                 'Add New User',
