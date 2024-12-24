@@ -32,28 +32,28 @@ class UserCard extends StatelessWidget {
           onSelected: (value) {
             // Handle the selected action
             if (value == 1) {
-              // Action for Edit
+              // aksi edit
               print('Edit selected');
             } else if (value == 2) {
-              // Action for Delete
+              // Aksi delete
               print('Delete selected');
             }
           },
           itemBuilder: (context) => [
-            PopupMenuItem(
+             const PopupMenuItem(
               value: 1,
               child: Row(
-                children: const [
+                children: [
                   Icon(Icons.edit, color: Colors.black),
                   SizedBox(width: 8),
                   Text('Edit'),
                 ],
               ),
             ),
-            PopupMenuItem(
+            const PopupMenuItem(
               value: 2,
               child: Row(
-                children: const [
+                children: [
                   Icon(Icons.delete, color: Colors.red),
                   SizedBox(width: 8),
                   Text('Delete'),
