@@ -1,6 +1,6 @@
 class User {
-  // final String name;
-  // final String car;
+  final String name;
+  final String description;
 
-  // Todo(this.name, this.car);
+  User(this.name, this.description);
 }

@@ -4,11 +4,13 @@ class UserCard extends StatelessWidget {
   final String name;
   final String description;
   final Color color;
+  // final VoidCallback onTap;
 
   const UserCard({
     required this.name,
     required this.description,
     required this.color,
+    // required this.onTap,
     super.key,
   });
 
@@ -23,8 +25,10 @@ class UserCard extends StatelessWidget {
           child: Icon(Icons.person, color: Colors.white),
         ),
         title: Text(
-          name,
-          style: const TextStyle(fontWeight: FontWeight.bold),
+          name as String,
+          style: const TextStyle(
+            fontWeight: FontWeight.bold
+          ),
         ),
         subtitle: Text(description),
         trailing: PopupMenuButton<int>(

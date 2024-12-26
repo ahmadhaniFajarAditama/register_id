@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:register_id/bloc/user_bloc.dart';
 
-class RegisterPage extends StatelessWidget {
+class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
+
+  @override
+  State<RegisterPage> createState() => _RegisterPageState();
+}
+
+class _RegisterPageState extends State<RegisterPage> {
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +58,7 @@ class RegisterPage extends StatelessWidget {
                       context: context,
                       builder: (context) => AlertDialog(
                         title: const Text('Info'),
-                        content: const Text('Enter the username for the access key.'),
+                        content: const Text('Enter the username for your id.'),
                         actions: [
                           TextButton(
                             onPressed: () => Navigator.pop(context),

@@ -16,5 +16,28 @@ class UserBloc extends Bloc<UserEvent, UserState> {
       );
     }
     );
+    on<OnUpdateUser>((event, emit) {
+      User newUser = event.newUser;
+      int index = event.index;
+      List<User> usersUpdates = state.users;
+      usersUpdates[index] = newUser;
+      emit(
+        UserUpdated(
+          usersUpdates
+        ),
+      );
+    }
+    );
+    on<OnRemoveUser>((event, emit) {
+      int index = event.index;
+      List<User> usersRemoved = state.users;
+      usersRemoved.removeAt(index);
+      emit(
+        UserRemoved(
+          usersRemoved
+        ),
+      );
+    }
+    );
   }
 }

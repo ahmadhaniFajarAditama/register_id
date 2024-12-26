@@ -14,3 +14,11 @@ final class UserInitial extends UserState {
 final class UserAdded extends UserState {
   const UserAdded(super.users);
 }
+
+final class UserRemoved extends UserState {
+  const UserRemoved(super.users);
+}
+
+final class UserUpdated extends UserState {
+  const UserUpdated(super.users);
+}
